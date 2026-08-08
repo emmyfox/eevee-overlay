@@ -40,10 +40,10 @@
             pointer-events: none;
         }
 
-        /* --- LAYER 2: EEVEE PEEK-A-BOO (Placed in front of the desk so no cut-off happens) --- */
+        /* --- LAYER 2: EEVEE PEEK-A-BOO (Pushed up so she pops flush right along the top of the monitor bezel) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: 15px;
+            top: 25px;
             left: 680px;
             width: 450px;
             z-index: 3;
@@ -98,7 +98,7 @@
         <!-- Layer 1: Desk and Monitor Overlay -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Layer 2: Peek-a-boo Eevee (Placed on top layer so she pops up cleanly without any weird edge cutting) -->
+        <!-- Layer 2: Peek-a-boo Eevee (Flush with top monitor edge) -->
         <div class="eevee-peekaboo">
             <video autoplay muted loop playsinline>
                 <source src="Peekaboo.webm" type="video/webm">
