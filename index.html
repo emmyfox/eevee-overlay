@@ -40,11 +40,11 @@
             pointer-events: none;
         }
 
-        /* --- POPPING TEXT INSIDE MONITOR SCREEN --- */
+        /* --- POPPING TEXT CENTERED INSIDE MONITOR SCREEN --- */
         .monitor-text-container {
             position: absolute;
-            top: 35%;
-            left: 51%;
+            top: 330px;
+            left: 480px;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -77,39 +77,39 @@
             display: block;
         }
 
-        /* Big Peekaboo Eevee centered precisely on top middle of the monitor */
+        /* Much bigger Peekaboo Eevee centered on top-middle of the monitor */
         .eevee-peekaboo {
             position: absolute;
-            top: 105px;
-            left: 610px;
-            width: 320px;
+            top: 155px;
+            left: 450px;
+            width: 220px;
             z-index: 3;
         }
 
-        /* Sleeping Eevee on the left-middle desk */
+        /* Sleeping Eevee */
         .eevee-sleep {
             position: absolute;
             bottom: 275px;
-            left: 360px;
+            left: 210px;
             width: 440px;
             z-index: 3;
         }
 
-        /* Tea Eevee moved to the right side by the window */
+        /* Tea Eevee moved to the right side by the mouse */
         .eevee-tea {
             position: absolute;
             bottom: 215px;
-            left: 780px;
+            left: 630px;
             width: 380px;
             z-index: 3;
         }
 
-        /* --- LAYER 4: TALLER MASSIVE PLANT REACHING TOP OF FRAME --- */
+        /* --- LAYER 4: TALLER & WIDER MASSIVE PLANT --- */
         .plant-element {
             position: absolute;
-            bottom: -90px;
-            left: -130px;
-            width: 1650px;
+            bottom: -100px;
+            left: -140px;
+            width: 1750px;
             height: auto;
             z-index: 10;
             pointer-events: none;
@@ -129,7 +129,7 @@
         <!-- Layer 2: Desk and Monitor -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Pop-up Text on the Monitor Screen -->
+        <!-- Pop-up Text Centered on Monitor Screen -->
         <div class="monitor-text-container">
             <div class="pop-text">Be Right Back</div>
         </div>
