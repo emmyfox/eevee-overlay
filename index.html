@@ -32,32 +32,16 @@
             height: 1080px;
         }
 
-        /* --- LAYER 1: PEEK-A-BOO EEVEE (Placed BEHIND the desk layer with smooth CSS sliding) --- */
+        /* --- PEEK-A-BOO EEVEE (Moved down to sit right on the monitor frame) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: -10px;
+            top: 45px;
             left: 680px;
             width: 450px;
             z-index: 1;
-            animation: peekABooSlide 6s infinite ease-in-out;
         }
 
-        @keyframes peekABooSlide {
-            0%, 20%, 100% {
-                transform: translateY(60px); /* Slid down behind the monitor frame */
-            }
-            40%, 70% {
-                transform: translateY(0px); /* Slid up into view! */
-            }
-        }
-
-        .eevee-peekaboo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
+        /* --- DESK WITH MONITOR OVERLAY --- */
         .desk-layer {
             position: absolute;
             top: 0;
@@ -116,12 +100,14 @@
 <body>
 
     <div class="scene">
-        <!-- Layer 1: Peek-a-boo Eevee (Behind desk, using your new animated image file - update filename if needed) -->
+        <!-- Peek-a-boo Eevee (Using your exact Peekaboo.webm file) -->
         <div class="eevee-peekaboo">
-            <img src="peekaboo.png" alt="Peekaboo Eevee">
+            <video autoplay muted loop playsinline>
+                <source src="Peekaboo.webm" type="video/webm">
+            </video>
         </div>
 
-        <!-- Layer 2: Desk and Monitor Overlay -->
+        <!-- Desk and Monitor Overlay -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
         <!-- Sleeping Eevee -->
