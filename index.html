@@ -15,7 +15,11 @@
             width: 1920px;
             height: 1080px;
             overflow: hidden;
-            background-color: transparent;
+            /* --- FOOLPROOF BACKGROUND FIX --- */
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -23,17 +27,6 @@
             position: relative;
             width: 1920px;
             height: 1080px;
-        }
-
-        /* --- ROOM BACKGROUND --- */
-        .room-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1920px;
-            height: 1080px;
-            z-index: 1;
-            object-fit: cover;
         }
 
         /* --- POPPING TEXT ON MONITOR --- */
@@ -104,9 +97,6 @@
 <body>
 
     <div class="scene">
-        <!-- Background Room -->
-        <img src="background.png" alt="Room Background" class="room-bg">
-
         <!-- Pop-up Text on the Monitor Screen -->
         <div class="monitor-text-container">
             <div class="pop-text">Stream Starting Soon</div>
