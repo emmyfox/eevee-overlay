@@ -28,7 +28,7 @@
             height: 1080px;
         }
 
-        /* --- LAYER 1: EEVEE PEEK-A-BOO (Moved back & nudged up higher) --- */
+        /* --- LAYER 1: EEVEE PEEK-A-BOO (Behind desk) --- */
         .eevee-peekaboo {
             position: absolute;
             top: -25px;
@@ -49,11 +49,11 @@
             pointer-events: none;
         }
 
-        /* --- POPPING TEXT CENTERED ON MONITOR SCREEN --- */
+        /* --- POPPING TEXT CENTERED DIRECTLY ON THE COMPUTER SCREEN --- */
         .monitor-text-container {
             position: absolute;
             top: 360px;
-            left: 510px;
+            left: 450px;
             transform: translate(-50%, -50%);
             z-index: 3;
         }
@@ -94,10 +94,11 @@
             z-index: 3;
         }
 
+        /* Tea Eevee pushed back further onto the desk away from the edge */
         .eevee-tea {
             position: absolute;
-            bottom: 220px;
-            left: 1350px;
+            bottom: 270px;
+            left: 1320px;
             width: 400px;
             z-index: 3;
         }
@@ -134,7 +135,7 @@
         <!-- Layer 2: Desk and Monitor Overlay -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Pop-up Text Centered Inside Monitor Screen -->
+        <!-- Pop-up Text Centered Inside Computer Screen -->
         <div class="monitor-text-container">
             <div class="pop-text">Be Right Back</div>
         </div>
