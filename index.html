@@ -15,6 +15,7 @@
             width: 1920px;
             height: 1080px;
             overflow: hidden;
+            /* Layer 1: Full Room Background */
             background-image: url('background.png.png');
             background-size: cover;
             background-position: center;
@@ -26,6 +27,18 @@
             position: relative;
             width: 1920px;
             height: 1080px;
+        }
+
+        /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
+        .desk-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 1080px;
+            object-fit: cover;
+            z-index: 1;
+            pointer-events: none;
         }
 
         /* --- POPPING TEXT INSIDE MONITOR SCREEN --- */
@@ -57,7 +70,7 @@
             100% { opacity: 0; transform: scale(0.5); }
         }
 
-        /* --- EEVEE ANIMATIONS --- */
+        /* --- LAYER 3: EEVEE ANIMATIONS --- */
         video {
             width: 100%;
             height: auto;
@@ -89,7 +102,7 @@
             z-index: 3;
         }
 
-        /* --- PLANT GRAPHIC (TAKES UP LEFT SIDE & SCREENS OUT BACKGROUND) --- */
+        /* --- LAYER 4: PLANT GRAPHIC (CLEAN TRANSPARENCY, NO FILTERS) --- */
         .plant-element {
             position: absolute;
             bottom: 0;
@@ -100,7 +113,6 @@
             pointer-events: none;
             transform-origin: bottom left;
             animation: swayPlant 4s infinite ease-in-out;
-            mix-blend-mode: screen;
         }
 
         @keyframes swayPlant {
@@ -112,12 +124,15 @@
 <body>
 
     <div class="scene">
+        <!-- Layer 2: Desk and Monitor -->
+        <img src="desk.png.png" alt="Desk" class="desk-layer">
+
         <!-- Pop-up Text on the Monitor Screen -->
         <div class="monitor-text-container">
             <div class="pop-text">Stream Starting Soon</div>
         </div>
 
-        <!-- Eevees -->
+        <!-- Layer 3: Eevees -->
         <div class="eevee-peekaboo">
             <video autoplay muted loop playsinline>
                 <source src="Peekaboo.webm" type="video/webm">
@@ -136,7 +151,7 @@
             </video>
         </div>
 
-        <!-- Plant taking up the left side -->
+        <!-- Layer 4: Transparent Plant on Left -->
         <img src="plant.png.png" alt="Plant" class="plant-element">
     </div>
 
