@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be Right Back - Eevee Cozy Room</title>
+    <title>Eevee Cozy Room</title>
     <style>
         * {
             box-sizing: border-box;
@@ -49,35 +49,6 @@
             pointer-events: none;
         }
 
-        /* --- POPPING TEXT CENTERED DIRECTLY ON THE COMPUTER SCREEN --- */
-        .monitor-text-container {
-            position: absolute;
-            top: 360px;
-            left: 450px;
-            transform: translate(-50%, -50%);
-            z-index: 3;
-        }
-
-        .pop-text {
-            color: #ff85a1;
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(255, 105, 180, 0.4);
-            opacity: 0;
-            transform: scale(0.5);
-            animation: popSequence 120s infinite;
-        }
-
-        @keyframes popSequence {
-            0% { opacity: 0; transform: scale(0.5); }
-            2% { opacity: 1; transform: scale(1.1); }
-            4% { opacity: 1; transform: scale(1); }
-            35% { opacity: 1; transform: scale(1); }
-            39% { opacity: 0; transform: scale(0.8); }
-            100% { opacity: 0; transform: scale(0.5); }
-        }
-
         /* --- OTHER EEVEE ANIMATIONS --- */
         video {
             width: 100%;
@@ -94,7 +65,6 @@
             z-index: 3;
         }
 
-        /* Tea Eevee pushed back further onto the desk away from the edge */
         .eevee-tea {
             position: absolute;
             bottom: 270px;
@@ -134,11 +104,6 @@
 
         <!-- Layer 2: Desk and Monitor Overlay -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
-
-        <!-- Pop-up Text Centered Inside Computer Screen -->
-        <div class="monitor-text-container">
-            <div class="pop-text">Be Right Back</div>
-        </div>
 
         <!-- Layer 3: Other Eevees -->
         <div class="eevee-sleep">
