@@ -15,7 +15,6 @@
             width: 1920px;
             height: 1080px;
             overflow: hidden;
-            /* Layer 1: Full Room Background */
             background-image: url('background.png.png');
             background-size: cover;
             background-position: center;
@@ -27,6 +26,29 @@
             position: relative;
             width: 1920px;
             height: 1080px;
+        }
+
+        /* --- GREEN SCREEN FOR COMPUTER MONITOR SCREEN --- */
+        .monitor-green-screen {
+            position: absolute;
+            top: 215px;
+            left: 440px;
+            width: 395px;
+            height: 395px;
+            background-color: #00ff00;
+            z-index: 0; /* Sits right behind the desk graphic */
+            border-radius: 12px;
+        }
+
+        /* --- GREEN SCREEN FOR WINDOW --- */
+        .window-green-screen {
+            position: absolute;
+            top: 170px;
+            left: 775px;
+            width: 155px;
+            height: 345px;
+            background-color: #00ff00;
+            z-index: 0;
         }
 
         /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
@@ -102,12 +124,12 @@
             z-index: 3;
         }
 
-        /* --- LAYER 4: PLANT GRAPHIC (CLEAN TRANSPARENCY, NO FILTERS) --- */
+        /* --- LAYER 4: BIGGER PLANT GRAPHIC --- */
         .plant-element {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 750px;
+            bottom: -50px;
+            left: -80px;
+            width: 950px; /* Made substantially bigger */
             height: auto;
             z-index: 10;
             pointer-events: none;
@@ -124,6 +146,12 @@
 <body>
 
     <div class="scene">
+        <!-- Green Screen behind Computer Monitor -->
+        <div class="monitor-green-screen"></div>
+
+        <!-- Green Screen behind Window -->
+        <div class="window-green-screen"></div>
+
         <!-- Layer 2: Desk and Monitor -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
@@ -151,7 +179,7 @@
             </video>
         </div>
 
-        <!-- Layer 4: Transparent Plant on Left -->
+        <!-- Layer 4: Larger Transparent Plant on Left -->
         <img src="plant.png.png" alt="Plant" class="plant-element">
     </div>
 
