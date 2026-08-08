@@ -57,18 +57,16 @@
             100% { opacity: 0; transform: scale(0.5); }
         }
 
-        /* --- PLANT GRAPHIC (BLUE SCREEN REMOVED VIA BLEND MODE) --- */
+        /* --- PLANT GRAPHIC (CLEAN TRANSPARENCY) --- */
         .plant-element {
             position: absolute;
-            bottom: -20px;
-            left: -20px;
+            bottom: 20px;
+            left: 20px;
             width: 380px;
             z-index: 3;
             pointer-events: none;
             transform-origin: bottom center;
             animation: swayPlant 4s infinite ease-in-out;
-            /* This strips out the blue background box from the image */
-            mix-blend-mode: screen;
         }
 
         @keyframes swayPlant {
@@ -115,7 +113,7 @@
 <body>
 
     <div class="scene">
-        <!-- Swaying Plant with Blue Screen Removed -->
+        <!-- Swaying Plant -->
         <img src="plant.png.png" alt="Plant" class="plant-element">
 
         <!-- Pop-up Text on the Monitor Screen -->
