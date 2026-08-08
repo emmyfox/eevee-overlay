@@ -28,16 +28,16 @@
             height: 1080px;
         }
 
-        /* --- LAYER 2: EEVEE PEEK-A-BOO (Sits behind the desk overlay) --- */
+        /* --- LAYER 1: EEVEE PEEK-A-BOO (Moved back & nudged up higher) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: 55px;
-            left: 425px;
+            top: -25px;
+            left: 680px;
             width: 450px;
             z-index: 1;
         }
 
-        /* --- LAYER 3: DESK WITH MONITOR OVERLAY --- */
+        /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
         .desk-layer {
             position: absolute;
             top: 0;
@@ -49,11 +49,11 @@
             pointer-events: none;
         }
 
-        /* --- POPPING TEXT CENTERED DEAD IN THE COMPUTER SCREEN --- */
+        /* --- POPPING TEXT CENTERED ON MONITOR SCREEN --- */
         .monitor-text-container {
             position: absolute;
-            top: 340px;
-            left: 470px;
+            top: 360px;
+            left: 510px;
             transform: translate(-50%, -50%);
             z-index: 3;
         }
