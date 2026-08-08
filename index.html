@@ -32,13 +32,20 @@
             height: 1080px;
         }
 
-        /* --- PEEK-A-BOO EEVEE (Moved down to sit right on the monitor frame) --- */
+        /* --- PEEK-A-BOO EEVEE (Behind desk, perfectly sized to show full animation) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: 45px;
+            top: -40px;
             left: 680px;
-            width: 450px;
+            width: 420px;
             z-index: 1;
+        }
+
+        .eevee-peekaboo video {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
         }
 
         /* --- DESK WITH MONITOR OVERLAY --- */
@@ -100,7 +107,7 @@
 <body>
 
     <div class="scene">
-        <!-- Peek-a-boo Eevee (Using your exact Peekaboo.webm file) -->
+        <!-- Peek-a-boo Eevee -->
         <div class="eevee-peekaboo">
             <video autoplay muted loop playsinline>
                 <source src="Peekaboo.webm" type="video/webm">
