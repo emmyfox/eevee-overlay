@@ -28,7 +28,16 @@
             height: 1080px;
         }
 
-        /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
+        /* --- LAYER 2: EEVEE PEEK-A-BOO (Sits behind the desk overlay) --- */
+        .eevee-peekaboo {
+            position: absolute;
+            top: 55px;
+            left: 425px;
+            width: 450px;
+            z-index: 1;
+        }
+
+        /* --- LAYER 3: DESK WITH MONITOR OVERLAY --- */
         .desk-layer {
             position: absolute;
             top: 0;
@@ -36,17 +45,17 @@
             width: 1920px;
             height: 1080px;
             object-fit: cover;
-            z-index: 1;
+            z-index: 2;
             pointer-events: none;
         }
 
-        /* --- POPPING TEXT DEAD CENTER OF THE MONITOR SCREEN --- */
+        /* --- POPPING TEXT CENTERED DEAD IN THE COMPUTER SCREEN --- */
         .monitor-text-container {
             position: absolute;
-            top: 360px;
+            top: 340px;
             left: 470px;
             transform: translate(-50%, -50%);
-            z-index: 2;
+            z-index: 3;
         }
 
         .pop-text {
@@ -69,7 +78,7 @@
             100% { opacity: 0; transform: scale(0.5); }
         }
 
-        /* --- LAYER 3: EEVEE ANIMATIONS --- */
+        /* --- OTHER EEVEE ANIMATIONS --- */
         video {
             width: 100%;
             height: auto;
@@ -77,16 +86,6 @@
             display: block;
         }
 
-        /* Peekaboo Eevee moved up slightly higher to peek over the top */
-        .eevee-peekaboo {
-            position: absolute;
-            top: -15px;
-            left: 680px;
-            width: 450px;
-            z-index: 3;
-        }
-
-        /* Sleeping Eevee */
         .eevee-sleep {
             position: absolute;
             bottom: 120px;
@@ -95,7 +94,6 @@
             z-index: 3;
         }
 
-        /* Tea Eevee */
         .eevee-tea {
             position: absolute;
             bottom: 220px;
@@ -126,21 +124,22 @@
 <body>
 
     <div class="scene">
-        <!-- Layer 2: Desk and Monitor -->
-        <img src="desk.png.png" alt="Desk" class="desk-layer">
-
-        <!-- Pop-up Text Centered on Monitor Screen -->
-        <div class="monitor-text-container">
-            <div class="pop-text">Be Right Back</div>
-        </div>
-
-        <!-- Layer 3: Eevees -->
+        <!-- Layer 1: Peek-a-boo Eevee (Behind desk) -->
         <div class="eevee-peekaboo">
             <video autoplay muted loop playsinline>
                 <source src="Peekaboo.webm" type="video/webm">
             </video>
         </div>
 
+        <!-- Layer 2: Desk and Monitor Overlay -->
+        <img src="desk.png.png" alt="Desk" class="desk-layer">
+
+        <!-- Pop-up Text Centered Inside Monitor Screen -->
+        <div class="monitor-text-container">
+            <div class="pop-text">Be Right Back</div>
+        </div>
+
+        <!-- Layer 3: Other Eevees -->
         <div class="eevee-sleep">
             <video autoplay muted loop playsinline>
                 <source src="sleep.webm" type="video/webm">
