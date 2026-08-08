@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Starting Soon - Eevee Cozy Room</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background-color: transparent;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .scene {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+        }
+
+        /* --- ROOM BACKGROUND --- */
+        .room-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 1080px;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        /* --- POPPING TEXT ON MONITOR --- */
+        .monitor-text-container {
+            position: absolute;
+            top: 32%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .pop-text {
+            color: #ff85a1;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(255, 105, 180, 0.4);
+            opacity: 0;
+            transform: scale(0.5);
+            animation: popSequence 120s infinite; /* Loops every 2 minutes */
+        }
+
+        @keyframes popSequence {
+            0% { opacity: 0; transform: scale(0.5); }
+            2% { opacity: 1; transform: scale(1.1); }
+            4% { opacity: 1; transform: scale(1); }
+            35% { opacity: 1; transform: scale(1); }
+            39% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        /* --- EEVEE ANIMATIONS (WEBM WITH TRANSPARENCY) --- */
+        video {
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+            display: block;
+        }
+
+        /* 1. Peekaboo Eevee */
+        .eevee-peekaboo {
+            position: absolute;
+            top: 250px;
+            left: 530px;
+            width: 180px;
+            z-index: 3;
+        }
+
+        /* 2. Sleeping Eevee on desk */
+        .eevee-sleep {
+            position: absolute;
+            bottom: 220px;
+            left: 350px;
+            width: 300px;
+            z-index: 3;
+        }
+
+        /* 3. Tea Eevee with mug and steam */
+        .eevee-tea {
+            position: absolute;
+            bottom: 200px;
+            right: 420px;
+            width: 280px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene">
+        <!-- Background Room -->
+        <img src="background.png" alt="Room Background" class="room-bg">
+
+        <!-- Pop-up Text on the Monitor Screen -->
+        <div class="monitor-text-container">
+            <div class="pop-text">Stream Starting Soon</div>
+        </div>
+
+        <!-- Peekaboo Eevee WebM -->
+        <div class="eevee-peekaboo">
+            <video autoplay muted loop playsinline>
+                <source src="Peekaboo.webm" type="video/webm">
+            </video>
+        </div>
+
+        <!-- Sleeping Eevee WebM -->
+        <div class="eevee-sleep">
+            <video autoplay muted loop playsinline>
+                <source src="sleep.webm" type="video/webm">
+            </video>
+        </div>
+
+        <!-- Tea Eevee WebM -->
+        <div class="eevee-tea">
+            <video autoplay muted loop playsinline>
+                <source src="tea.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+
+</body>
+</html>
