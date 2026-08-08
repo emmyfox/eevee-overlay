@@ -28,25 +28,25 @@
             height: 1080px;
         }
 
-        /* --- GREEN SCREEN FOR COMPUTER MONITOR SCREEN --- */
+        /* --- PRECISE GREEN SCREEN INSIDE COMPUTER MONITOR --- */
         .monitor-green-screen {
             position: absolute;
-            top: 215px;
-            left: 440px;
-            width: 395px;
-            height: 395px;
+            top: 205px;
+            left: 326px;
+            width: 310px;
+            height: 310px;
             background-color: #00ff00;
-            z-index: 0; /* Sits right behind the desk graphic */
-            border-radius: 12px;
+            z-index: 0;
+            border-radius: 4px;
         }
 
-        /* --- GREEN SCREEN FOR WINDOW --- */
+        /* --- GREEN SCREEN FOR THE WALL WINDOW --- */
         .window-green-screen {
             position: absolute;
-            top: 170px;
+            top: 40px;
             left: 775px;
             width: 155px;
-            height: 345px;
+            height: 325px;
             background-color: #00ff00;
             z-index: 0;
         }
@@ -67,7 +67,7 @@
         .monitor-text-container {
             position: absolute;
             top: 35%;
-            left: 50%;
+            left: 48%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -100,18 +100,19 @@
             display: block;
         }
 
+        /* Bigger Peekaboo Eevee peeking over the top of the monitor */
         .eevee-peekaboo {
             position: absolute;
-            top: 250px;
-            left: 380px;
-            width: 100px;
+            top: 170px;
+            left: 425px;
+            width: 130px;
             z-index: 3;
         }
 
         .eevee-sleep {
             position: absolute;
             bottom: 300px;
-            left: 280px;
+            left: 195px;
             width: 240px;
             z-index: 3;
         }
@@ -119,7 +120,7 @@
         .eevee-tea {
             position: absolute;
             bottom: 215px;
-            left: 640px;
+            left: 440px;
             width: 220px;
             z-index: 3;
         }
@@ -129,7 +130,7 @@
             position: absolute;
             bottom: -50px;
             left: -80px;
-            width: 950px; /* Made substantially bigger */
+            width: 950px;
             height: auto;
             z-index: 10;
             pointer-events: none;
@@ -146,10 +147,10 @@
 <body>
 
     <div class="scene">
-        <!-- Green Screen behind Computer Monitor -->
+        <!-- Green Screen perfectly inside Computer Monitor -->
         <div class="monitor-green-screen"></div>
 
-        <!-- Green Screen behind Window -->
+        <!-- Green Screen for the Window on the Wall -->
         <div class="window-green-screen"></div>
 
         <!-- Layer 2: Desk and Monitor -->
