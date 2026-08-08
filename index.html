@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Starting Soon - Eevee Cozy Room</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            /* Your full room background graphic */
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .scene {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+        }
+
+        /* --- POPPING TEXT INSIDE MONITOR SCREEN --- */
+        .monitor-text-container {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .pop-text {
+            color: #ff85a1;
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(255, 105, 180, 0.4);
+            opacity: 0;
+            transform: scale(0.5);
+            animation: popSequence 120s infinite; /* Loops every 2 minutes */
+        }
+
+        @keyframes popSequence {
+            0% { opacity: 0; transform: scale(0.5); }
+            2% { opacity: 1; transform: scale(1.1); }
+            4% { opacity: 1; transform: scale(1); }
+            35% { opacity: 1; transform: scale(1); }
+            39% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        /* --- EEVEE ANIMATIONS --- */
+        video {
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+            display: block;
+        }
+
+        .eevee-peekaboo {
+            position: absolute;
+            top: 250px;
+            left: 380px;
+            width: 100px;
+            z-index: 3;
+        }
+
+        .eevee-sleep {
+            position: absolute;
+            bottom: 300px;
+            left: 280px;
+            width: 240px;
+            z-index: 3;
+        }
+
+        .eevee-tea {
+            position: absolute;
+            bottom: 215px;
+            left: 640px;
+            width: 220px;
+            z-index: 3;
+        }
+
+        /* --- PLANT GRAPHIC (TAKES UP LEFT SIDE & BLENDS OUT BLUE BOX) --- */
+        .plant-element {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 750px; /* Takes up the whole left side */
+            height: auto;
+            z-index: 10;
+            pointer-events: none;
+            transform-origin: bottom left;
+            animation: swayPlant 4s infinite ease-in-out;
+            /* Removes the blue background box from the image */
+            mix-blend-mode: screen;
+        }
+
+        @keyframes swayPlant {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(1.5deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene">
+        <!-- Pop-up Text on the Monitor Screen -->
+        <div class="monitor-text-container">
+            <div class="pop-text">Stream Starting Soon</div>
+        </div>
+
+        <!-- Eevees -->
+        <div class="eevee-peekaboo">
+            <video autoplay muted loop playsinline>
+                <source src="Peekaboo.webm" type="video/webm">
+            </video>
+        </div>
+
+        <div class="eevee-sleep">
+            <video autoplay muted loop playsinline>
+                <source src="sleep.webm" type="video/webm">
+            </video>
+        </div>
+
+        <div class="eevee-tea">
+            <video autoplay muted loop playsinline>
+                <source src="tea.webm" type="video/webm">
+            </video>
+        </div>
+
+        <!-- Plant taking up the left side with blue box screened out -->
+        <img src="plant.png" alt="Plant" class="plant-element">
+    </div>
+
+</body>
+</html>
