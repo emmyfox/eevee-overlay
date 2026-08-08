@@ -15,8 +15,7 @@
             width: 1920px;
             height: 1080px;
             overflow: hidden;
-            /* Your full room background graphic */
-            background-image: url('background.png');
+            background-image: url('background.png.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -46,7 +45,7 @@
             text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(255, 105, 180, 0.4);
             opacity: 0;
             transform: scale(0.5);
-            animation: popSequence 120s infinite; /* Loops every 2 minutes */
+            animation: popSequence 120s infinite;
         }
 
         @keyframes popSequence {
@@ -90,18 +89,17 @@
             z-index: 3;
         }
 
-        /* --- PLANT GRAPHIC (TAKES UP LEFT SIDE & BLENDS OUT BLUE BOX) --- */
+        /* --- PLANT GRAPHIC (TAKES UP LEFT SIDE & SCREENS OUT BACKGROUND) --- */
         .plant-element {
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 750px; /* Takes up the whole left side */
+            width: 750px;
             height: auto;
             z-index: 10;
             pointer-events: none;
             transform-origin: bottom left;
             animation: swayPlant 4s infinite ease-in-out;
-            /* Removes the blue background box from the image */
             mix-blend-mode: screen;
         }
 
@@ -138,8 +136,8 @@
             </video>
         </div>
 
-        <!-- Plant taking up the left side with blue box screened out -->
-        <img src="plant.png" alt="Plant" class="plant-element">
+        <!-- Plant taking up the left side -->
+        <img src="plant.png.png" alt="Plant" class="plant-element">
     </div>
 
 </body>
