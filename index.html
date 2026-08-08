@@ -32,10 +32,10 @@
             height: 1080px;
         }
 
-        /* --- PEEK-A-BOO EEVEE (Slight, gentle position) --- */
+        /* --- PEEK-A-BOO EEVEE (Moved up higher so her whole face clears the monitor frame) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: 20px;
+            top: -50px;
             left: 680px;
             width: 450px;
             z-index: 1;
@@ -135,11 +135,11 @@
         <img src="plant.png.png" alt="Plant" class="plant-element">
     </div>
 
-    <!-- Script to slow down the peek-a-boo video playback speed -->
+    <!-- Script to keep her motion cozy and smooth -->
     <script>
         const peekVideo = document.querySelector('.eevee-peekaboo video');
         if (peekVideo) {
-            peekVideo.playbackRate = 0.65;
+            peekVideo.playbackRate = 0.75;
         }
     </script>
 
