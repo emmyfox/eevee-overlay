@@ -28,29 +28,6 @@
             height: 1080px;
         }
 
-        /* --- PRECISE GREEN SCREEN INSIDE COMPUTER MONITOR --- */
-        .monitor-green-screen {
-            position: absolute;
-            top: 205px;
-            left: 326px;
-            width: 310px;
-            height: 310px;
-            background-color: #00ff00;
-            z-index: 0;
-            border-radius: 4px;
-        }
-
-        /* --- GREEN SCREEN FOR THE WALL WINDOW --- */
-        .window-green-screen {
-            position: absolute;
-            top: 40px;
-            left: 775px;
-            width: 155px;
-            height: 325px;
-            background-color: #00ff00;
-            z-index: 0;
-        }
-
         /* --- LAYER 2: DESK WITH MONITOR OVERLAY --- */
         .desk-layer {
             position: absolute;
@@ -67,7 +44,7 @@
         .monitor-text-container {
             position: absolute;
             top: 35%;
-            left: 48%;
+            left: 51%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -100,11 +77,11 @@
             display: block;
         }
 
-        /* Bigger Peekaboo Eevee peeking over the top of the monitor */
+        /* Peekaboo Eevee peeking over the top of the monitor */
         .eevee-peekaboo {
             position: absolute;
-            top: 170px;
-            left: 425px;
+            top: 142px;
+            left: 450px;
             width: 130px;
             z-index: 3;
         }
@@ -147,12 +124,6 @@
 <body>
 
     <div class="scene">
-        <!-- Green Screen perfectly inside Computer Monitor -->
-        <div class="monitor-green-screen"></div>
-
-        <!-- Green Screen for the Window on the Wall -->
-        <div class="window-green-screen"></div>
-
         <!-- Layer 2: Desk and Monitor -->
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
