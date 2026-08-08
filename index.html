@@ -32,12 +32,12 @@
             height: 1080px;
         }
 
-        /* --- PEEK-A-BOO EEVEE (Behind desk, perfectly sized to show full animation) --- */
+        /* --- PEEK-A-BOO EEVEE (Slight, gentle position) --- */
         .eevee-peekaboo {
             position: absolute;
-            top: -40px;
+            top: 20px;
             left: 680px;
-            width: 420px;
+            width: 450px;
             z-index: 1;
         }
 
@@ -134,6 +134,14 @@
         <!-- Massive Plant -->
         <img src="plant.png.png" alt="Plant" class="plant-element">
     </div>
+
+    <!-- Script to slow down the peek-a-boo video playback speed -->
+    <script>
+        const peekVideo = document.querySelector('.eevee-peekaboo video');
+        if (peekVideo) {
+            peekVideo.playbackRate = 0.65;
+        }
+    </script>
 
 </body>
 </html>
