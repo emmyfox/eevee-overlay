@@ -15,7 +15,6 @@
             width: 1920px;
             height: 1080px;
             overflow: hidden;
-            /* --- PUT THE CSS BACKGROUND URL HERE --- */
             background-image: url('desk.png.png');
             background-size: cover;
             background-position: center;
@@ -29,18 +28,18 @@
             height: 1080px;
         }
 
-        /* --- POPPING TEXT ON MONITOR --- */
+        /* --- POPPING TEXT INSIDE MONITOR SCREEN --- */
         .monitor-text-container {
             position: absolute;
-            top: 32%;
-            left: 54%;
+            top: 40%;
+            left: 49%;
             transform: translate(-50%, -50%);
             z-index: 2;
         }
 
         .pop-text {
             color: #ff85a1;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
             text-align: center;
             text-shadow: 2px 2px 0px #ffffff, 4px 4px 10px rgba(255, 105, 180, 0.4);
@@ -58,6 +57,23 @@
             100% { opacity: 0; transform: scale(0.5); }
         }
 
+        /* --- PLANT GRAPHIC --- */
+        .plant-element {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 350px; /* Adjust size if needed */
+            z-index: 3;
+            pointer-events: none;
+            transform-origin: bottom center;
+            animation: swayPlant 4s infinite ease-in-out;
+        }
+
+        @keyframes swayPlant {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(2deg); }
+        }
+
         /* --- EEVEE ANIMATIONS (WEBM WITH TRANSPARENCY) --- */
         video {
             width: 100%;
@@ -66,30 +82,30 @@
             display: block;
         }
 
-        /* 1. Peekaboo Eevee */
+        /* 1. Peekaboo Eevee (Top of monitor) */
         .eevee-peekaboo {
             position: absolute;
-            top: 250px;
-            left: 530px;
-            width: 180px;
+            top: 235px;
+            left: 300px;
+            width: 120px;
             z-index: 3;
         }
 
-        /* 2. Sleeping Eevee on desk */
+        /* 2. Sleeping Eevee on left side of desk */
         .eevee-sleep {
             position: absolute;
-            bottom: 220px;
-            left: 350px;
-            width: 300px;
+            bottom: 175px;
+            left: 170px;
+            width: 260px;
             z-index: 3;
         }
 
-        /* 3. Tea Eevee with mug and steam */
+        /* 3. Tea Eevee by the keyboard */
         .eevee-tea {
             position: absolute;
-            bottom: 200px;
-            right: 420px;
-            width: 280px;
+            bottom: 140px;
+            right: 515px;
+            width: 240px;
             z-index: 3;
         }
     </style>
@@ -97,6 +113,9 @@
 <body>
 
     <div class="scene">
+        <!-- Swaying Plant -->
+        <img src="plant.png.png" alt="Plant" class="plant-element">
+
         <!-- Pop-up Text on the Monitor Screen -->
         <div class="monitor-text-container">
             <div class="pop-text">Stream Starting Soon</div>
