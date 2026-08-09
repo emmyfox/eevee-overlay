@@ -60,18 +60,18 @@
             pointer-events: none;
         }
 
-        /* --- LAVA LAMP WRAPPER (Shifted far left completely off the keyboard, right into your red circle space) --- */
+        /* --- LAVA LAMP WRAPPER --- */
         .lava-lamp-container {
             position: absolute;
-            bottom: 300px;
-            left: 580px;
-            width: 160px;
-            height: 320px;
+            bottom: 310px;
+            left: 1240px;
+            width: 165px;
+            height: 420px;
             z-index: 3;
             pointer-events: none;
         }
 
-        /* The lamp PNG sits underneath so its outline frames everything */
+        /* The lamp PNG sits underneath */
         .lava-lamp-img {
             position: absolute;
             top: 0;
@@ -83,53 +83,80 @@
             filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
         }
 
-        /* Animated pink lava placed ON TOP of the PNG using screen blend mode so it glows brightly right through the glass */
+        /* Chamber containing upper floating blobs */
         .lava-animation-chamber {
             position: absolute;
-            top: 58px;
-            left: 48px;
-            width: 64px;
-            height: 160px;
+            top: 96px;
+            left: 51px;
+            width: 62px;
+            height: 120px;
             z-index: 2;
             overflow: hidden;
-            border-radius: 30px;
-            mix-blend-mode: screen; 
+            border-radius: 20px;
+            mix-blend-mode: multiply; 
         }
 
         .lava-blob-1, .lava-blob-2 {
             position: absolute;
-            background: #ff1493;
+            background: #d81b60;
             border-radius: 50%;
-            filter: blur(3px);
-            opacity: 0.95;
+            filter: blur(1.5px);
+            opacity: 1;
         }
 
         .lava-blob-1 {
-            width: 48px;
-            height: 58px;
-            bottom: 5px;
-            left: 8px;
-            animation: floatBlob1 6s ease-in-out infinite alternate;
+            width: 42px;
+            height: 46px;
+            bottom: 22px;
+            left: 10px;
+            animation: floatBlob1 4s ease-in-out infinite alternate;
         }
 
         .lava-blob-2 {
-            width: 40px;
-            height: 50px;
-            top: 5px;
-            right: 8px;
-            animation: floatBlob2 8s ease-in-out infinite alternate;
+            width: 36px;
+            height: 40px;
+            top: 22px;
+            right: 10px;
+            animation: floatBlob2 6s ease-in-out infinite alternate;
+        }
+
+        /* --- LOWER WAVE LAYER --- */
+        .lava-wave-layer {
+            position: absolute;
+            bottom: 200px;
+            left: 38px;
+            width: 88px;
+            height: 28px;
+            z-index: 4;
+            overflow: hidden;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+
+        .lava-bottom-pool {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #d81b60;
+            border-radius: 50% 50% 40% 40%;
+            filter: blur(1.5px);
+            animation: wavePool 4s ease-in-out infinite alternate;
         }
 
         @keyframes floatBlob1 {
             0% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-55px) scale(1.2, 0.9); }
-            100% { transform: translateY(-90px) scale(0.8, 1.1); }
+            100% { transform: translateY(-52px) scale(1.1, 0.9); }
         }
 
         @keyframes floatBlob2 {
             0% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(55px) scale(1.1, 0.8); }
-            100% { transform: translateY(85px) scale(0.9, 1.05); }
+            100% { transform: translateY(48px) scale(1.0, 0.9); }
+        }
+
+        @keyframes wavePool {
+            0% { transform: scale(1, 1); border-radius: 50% 50% 40% 40%; }
+            50% { transform: scale(1.05, 0.92); border-radius: 40% 60% 45% 35%; }
+            100% { transform: scale(0.95, 1.08); border-radius: 60% 40% 35% 45%; }
         }
 
         video {
@@ -187,12 +214,15 @@
 
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Lava Lamp moved off the keyboard into the red circle space with visible glowing lava on top -->
+        <!-- Lava lamp container with upper blobs floated higher -->
         <div class="lava-lamp-container">
             <img src="lavalamp.png" alt="Lava Lamp" class="lava-lamp-img">
             <div class="lava-animation-chamber">
                 <div class="lava-blob-1"></div>
                 <div class="lava-blob-2"></div>
+            </div>
+            <div class="lava-wave-layer">
+                <div class="lava-bottom-pool"></div>
             </div>
         </div>
 
