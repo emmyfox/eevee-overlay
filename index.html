@@ -60,21 +60,74 @@
             pointer-events: none;
         }
 
-        /* --- LAVA LAMP (Moved over to the right and made bigger so Eevee isn't blocking it) --- */
+        /* --- LAVA LAMP WRAPPER (Moved to the left side of Tea Eevee, made big) --- */
         .lava-lamp-container {
             position: absolute;
             bottom: 230px;
-            left: 1580px;
-            width: 180px;
+            left: 1140px;
+            width: 170px;
+            height: 340px;
             z-index: 3;
             pointer-events: none;
         }
 
+        /* The static PNG lamp image */
         .lava-lamp-img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: auto;
             display: block;
+            z-index: 2;
             filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        /* Animated pink lava container positioned precisely inside the glass chamber of your PNG */
+        .lava-animation-chamber {
+            position: absolute;
+            top: 62px;
+            left: 51px;
+            width: 68px;
+            height: 170px;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 34px;
+        }
+
+        .lava-blob-1, .lava-blob-2 {
+            position: absolute;
+            background: #ff2a6d;
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+
+        .lava-blob-1 {
+            width: 50px;
+            height: 60px;
+            bottom: 10px;
+            left: 9px;
+            animation: floatBlob1 7s ease-in-out infinite alternate;
+        }
+
+        .lava-blob-2 {
+            width: 40px;
+            height: 50px;
+            top: 10px;
+            right: 10px;
+            animation: floatBlob2 9s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatBlob1 {
+            0% { transform: translateY(0) scale(1); border-radius: 50%; }
+            50% { transform: translateY(-70px) scale(1.2, 0.9); border-radius: 40% 60% 50% 50%; }
+            100% { transform: translateY(-100px) scale(0.9, 1.1); border-radius: 50%; }
+        }
+
+        @keyframes floatBlob2 {
+            0% { transform: translateY(0) scale(1); border-radius: 50%; }
+            50% { transform: translateY(65px) scale(1.1, 0.8); border-radius: 60% 40% 50% 50%; }
+            100% { transform: translateY(90px) scale(0.95, 1.05); border-radius: 50%; }
         }
 
         video {
@@ -132,8 +185,12 @@
 
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Bigger Lava Lamp shifted over to the right -->
+        <!-- Big Lava Lamp shifted to the left of Tea Eevee with animated pink lava inside -->
         <div class="lava-lamp-container">
+            <div class="lava-animation-chamber">
+                <div class="lava-blob-1"></div>
+                <div class="lava-blob-2"></div>
+            </div>
             <img src="lavalamp.png" alt="Lava Lamp" class="lava-lamp-img">
         </div>
 
