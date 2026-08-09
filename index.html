@@ -60,7 +60,7 @@
             pointer-events: none;
         }
 
-        /* --- LAVA LAMP WRAPPER (Moved to your red circle spot, stacked in correct order) --- */
+        /* --- LAVA LAMP WRAPPER (Placed right where your red circle is) --- */
         .lava-lamp-container {
             position: absolute;
             bottom: 275px;
@@ -71,7 +71,7 @@
             pointer-events: none;
         }
 
-        /* Animated pink lava container placed BEHIND the lamp image so it shows inside the glass */
+        /* Animated pink lava chamber behind the glass */
         .lava-animation-chamber {
             position: absolute;
             top: 58px;
@@ -118,7 +118,7 @@
             100% { transform: translateY(85px) scale(0.9, 1.05); }
         }
 
-        /* The lamp PNG sits on top (z-index: 2) so the glass frame overlaps the lava */
+        /* The lamp PNG sits on top */
         .lava-lamp-img {
             position: absolute;
             top: 0;
@@ -185,7 +185,7 @@
 
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Lava Lamp moved to your red circle spot with visible animated pink lava inside -->
+        <!-- Lava Lamp in the red circle spot with animated pink lava -->
         <div class="lava-lamp-container">
             <div class="lava-animation-chamber">
                 <div class="lava-blob-1"></div>
