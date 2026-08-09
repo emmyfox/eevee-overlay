@@ -60,49 +60,63 @@
             pointer-events: none;
         }
 
-        /* --- LAVA LAMP WRAPPER (Placed right where your red circle is) --- */
+        /* --- LAVA LAMP WRAPPER (Shifted far left completely off the keyboard, right into your red circle space) --- */
         .lava-lamp-container {
             position: absolute;
-            bottom: 275px;
-            left: 1085px;
+            bottom: 300px;
+            left: 580px;
             width: 160px;
             height: 320px;
             z-index: 3;
             pointer-events: none;
         }
 
-        /* Animated pink lava chamber behind the glass */
+        /* The lamp PNG sits underneath so its outline frames everything */
+        .lava-lamp-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: block;
+            z-index: 1;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
+        }
+
+        /* Animated pink lava placed ON TOP of the PNG using screen blend mode so it glows brightly right through the glass */
         .lava-animation-chamber {
             position: absolute;
             top: 58px;
             left: 48px;
             width: 64px;
             height: 160px;
-            z-index: 1;
+            z-index: 2;
             overflow: hidden;
             border-radius: 30px;
+            mix-blend-mode: screen; 
         }
 
         .lava-blob-1, .lava-blob-2 {
             position: absolute;
-            background: #ff2a6d;
+            background: #ff1493;
             border-radius: 50%;
-            filter: blur(4px);
+            filter: blur(3px);
+            opacity: 0.95;
         }
 
         .lava-blob-1 {
-            width: 45px;
-            height: 55px;
+            width: 48px;
+            height: 58px;
             bottom: 5px;
-            left: 10px;
+            left: 8px;
             animation: floatBlob1 6s ease-in-out infinite alternate;
         }
 
         .lava-blob-2 {
-            width: 38px;
-            height: 48px;
+            width: 40px;
+            height: 50px;
             top: 5px;
-            right: 10px;
+            right: 8px;
             animation: floatBlob2 8s ease-in-out infinite alternate;
         }
 
@@ -116,18 +130,6 @@
             0% { transform: translateY(0) scale(1); }
             50% { transform: translateY(55px) scale(1.1, 0.8); }
             100% { transform: translateY(85px) scale(0.9, 1.05); }
-        }
-
-        /* The lamp PNG sits on top */
-        .lava-lamp-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            display: block;
-            z-index: 2;
-            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
         }
 
         video {
@@ -185,13 +187,13 @@
 
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <!-- Lava Lamp in the red circle spot with animated pink lava -->
+        <!-- Lava Lamp moved off the keyboard into the red circle space with visible glowing lava on top -->
         <div class="lava-lamp-container">
+            <img src="lavalamp.png" alt="Lava Lamp" class="lava-lamp-img">
             <div class="lava-animation-chamber">
                 <div class="lava-blob-1"></div>
                 <div class="lava-blob-2"></div>
             </div>
-            <img src="lavalamp.png" alt="Lava Lamp" class="lava-lamp-img">
         </div>
 
         <div class="eevee-sleep">
