@@ -60,75 +60,22 @@
             pointer-events: none;
         }
 
-        /* --- LAVA LAMP (Pure CSS, no PNG needed) --- */
-        .lava-lamp {
+        /* --- LAVA LAMP (Using your lavalamp PNG image, made nice and big by the window) --- */
+        .lava-lamp-container {
             position: absolute;
-            bottom: 340px;
-            left: 1120px;
-            width: 60px;
-            height: 140px;
+            bottom: 270px;
+            left: 1180px;
+            width: 120px; /* Made nice and big */
             z-index: 3;
             pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .lamp-top, .lamp-bottom {
-            width: 24px;
-            height: 15px;
-            background: #ff758c;
-            border-radius: 6px;
-        }
-
-        .lamp-bottom {
-            border-radius: 6px 6px 12px 12px;
-        }
-
-        .lamp-glass {
-            width: 44px;
-            height: 110px;
-            background: linear-gradient(180deg, rgba(255, 117, 140, 0.3), rgba(255, 204, 112, 0.3));
-            border-radius: 22px;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            box-shadow: inset 0 0 10px rgba(255, 105, 180, 0.5), 0 0 15px rgba(255, 182, 193, 0.6);
-        }
-
-        .lava-blob-1, .lava-blob-2 {
-            position: absolute;
-            background: #ff2a6d;
-            border-radius: 50%;
-            filter: blur(4px);
-        }
-
-        .lava-blob-1 {
-            width: 32px;
-            height: 38px;
-            bottom: 10px;
-            left: 6px;
-            animation: floatBlob1 7s ease-in-out infinite alternate;
-        }
-
-        .lava-blob-2 {
-            width: 26px;
-            height: 30px;
-            top: 10px;
-            right: 8px;
-            animation: floatBlob2 9s ease-in-out infinite alternate;
-        }
-
-        @keyframes floatBlob1 {
-            0% { transform: translateY(0) scale(1); border-radius: 50%; }
-            50% { transform: translateY(-50px) scale(1.2, 0.9); border-radius: 40% 60% 50% 50%; }
-            100% { transform: translateY(-70px) scale(0.9, 1.1); border-radius: 50%; }
-        }
-
-        @keyframes floatBlob2 {
-            0% { transform: translateY(0) scale(1); border-radius: 50%; }
-            50% { transform: translateY(45px) scale(1.1, 0.8); border-radius: 60% 40% 50% 50%; }
-            100% { transform: translateY(60px) scale(0.95, 1.05); border-radius: 50%; }
+        .lava-lamp-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Adds a soft glowing aura to make it look extra cozy */
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.8));
         }
 
         video {
@@ -186,13 +133,9 @@
 
         <img src="desk.png.png" alt="Desk" class="desk-layer">
 
-        <div class="lava-lamp">
-            <div class="lamp-top"></div>
-            <div class="lamp-glass">
-                <div class="lava-blob-1"></div>
-                <div class="lava-blob-2"></div>
-            </div>
-            <div class="lamp-bottom"></div>
+        <!-- Your PNG Lava Lamp by the window -->
+        <div class="lava-lamp-container">
+            <img src="lavalamp.png" alt="Lava Lamp" class="lava-lamp-img">
         </div>
 
         <div class="eevee-sleep">
